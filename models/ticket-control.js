@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 class Ticket {
-    contructor(numero, escritorio) {
+    constructor(numero, escritorio) {
         this.numero = numero;
         this.escritorio = escritorio
     }
@@ -60,12 +60,13 @@ class TicketControl {
         return 'Ticket' + ticket.numero;
     }
 
-    atenderTicket(){
+    atenderTicket( escritorio ){
         if (this.tickets.length === 0){
             return null;
         }
 
         const ticket = this.tickets.shift(); //this.tickets[0];
+    
         ticket.escritorio = escritorio;
 
         this.ultimos4.unshift( ticket );
