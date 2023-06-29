@@ -4,7 +4,7 @@ const lblEscritorio     = document.querySelector('h1');
 const btnAtender        = document.querySelector('button');
 const lblTicket         = document.querySelector('small');
 const divAlerta         = document.querySelector('.alert');
-const lblPendientes     = document.querySelector('lblPendientes');
+const lblPendientes     = document.querySelector('#lblPendientes');
 
 
 
@@ -18,7 +18,6 @@ if (!searchParams.has('escritorio')){
 
 
 const escritorio = searchParams.get('escritorio');
-// console.log({ escritorio });
 lblEscritorio.innerText = escritorio;
 
 divAlerta.style.display = 'none';
@@ -41,8 +40,8 @@ socket.on('tickets-pendientes', (pendientes) => {
         lblPendientes.style.display = 'none';
     } else {
         lblPendientes.style.display = '';
+        lblPendientes.innerText = pendientes;
     }
-    lblPendientes.innerText = pendientes;
 })
 
 

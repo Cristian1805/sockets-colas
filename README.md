@@ -1,5 +1,4 @@
-# Socket Server Basico
+# Aplicacíon de colas utilizando socket
 
-Un servidor de Websockets usando Node, Express y Socket.io
+En esta aplicacion, se utilizaron tecnologias npm como socket io, nodemon, json y enrutamiento.
 
-Temas cubiertos en mi curso de Node de cero a experto

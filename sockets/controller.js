@@ -15,7 +15,8 @@ const socketController = (socket) => {
     socket.on('siguiente-ticket', ( payload, callback ) => {
 
         const siguiente = ticketControl.siguiente();
-        callback ( siguiente ); 
+        callback ( siguiente );
+        socket.broadcast.emit('tickets-pendientes', ticketControl.tickets.length);  
 
         //Notificar que hay un nuevo ticket por asignar
     });
@@ -51,9 +52,6 @@ const socketController = (socket) => {
     })
 
 }
-
-
-
 module.exports = {
     socketController
 }
