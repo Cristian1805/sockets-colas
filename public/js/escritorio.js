@@ -37,6 +37,11 @@ socket.on('disconnect', () => {
 });
 
 socket.on('tickets-pendientes', (pendientes) => {
+    if (pendientes === 0){
+        lblPendientes.style.display = 'none';
+    } else {
+        lblPendientes.style.display = '';
+    }
     lblPendientes.innerText = pendientes;
 })
 
